@@ -1,27 +1,24 @@
 
 
 import React, { Component } from 'react';
-import './styles/chart.css'
+import '../styles/chart.css'
 import Candle from './Candle'
 
 
 class CandleChart extends React.Component {
-    Candle={
-        open:Number,
-        close:Number,
-        high:Number,
-        low:Number,
-        date:String
-    }
-        
+    
     constructor(props){
         super(props);
         
+        CandleChart.propTypes = {
+            chartHeight:Number,
+            chartWidth:Number,
+        }
         this.mouseOver = this.mouseOver.bind(this);
         this.keyHandler = this.keyHandler.bind(this);
         this.selectHandler = this.selectHandler.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
-        
+        this.drawIndicator = this.drawIndicator.bind(this);
         
         this.state = {
             dataBounds : {
@@ -34,8 +31,8 @@ class CandleChart extends React.Component {
                 range:0
             },
             chartDimensions : {
-                chartWidth:0,
-                chartHeight:0
+                chartWidth:this.props.chartWidth,
+                chartHeight:this.props.chartHeight,
             },
             candles:[],
             isLoaded:false,
@@ -43,10 +40,9 @@ class CandleChart extends React.Component {
             ticker:'SPY',
             interval:'sixty_min',
             alphaUri :"",
-            localUri :""
-
+            localUri :"",
         }
-        
+      
     }   
     fetchAPIData = async(uri)=>{
     
@@ -103,7 +99,7 @@ class CandleChart extends React.Component {
             let chart = document.getElementById('candleChart');
             let dpr = window.devicePixelRatio;
             let width = chart.offsetWidth*dpr;
-            let height = chart.offsetHeight; 
+            let height = chart.offsetHeight*dpr; 
             let r = high - low;
             
             this.setState({
@@ -113,7 +109,7 @@ class CandleChart extends React.Component {
                         range:r
                     },
                     chartDimensions:{
-                        chartHeight :chart.offsetHeight,
+                        chartHeight :this.props.chartHeight,//chart.offsetHeight,
                         chartWidth:chart.offsetWidth
                     },
                     
@@ -165,23 +161,46 @@ class CandleChart extends React.Component {
         })
     }
     
+    resize(){
+        alert("Resized");
+        let uri = "http://localhost:8081/series/"+t.value+"/intraday/"+i.value;
+        this.fetchAPIData(uri);
+    }
         
     componentDidMount(){
         let uri = "http://localhost:8081/series/"+this.state.ticker+"/intraday/"+this.state.interval;
         
         this.fetchAPIData(uri);
+       // this.drawIndicator();
                     
     }
+    drawIndicator(){
+        let dpr = window.devicePixelRatio;
+        let canvas = document.getElementById('indicator');
+        let ctx = canvas.getContext("2d");
+        ctx.strokeStyle = "#fffff0";
         
+        // Start a new Path
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(300, 150);
+        ctx.lineWidth = .1*dpr;
+        // Draw the Path
+        ctx.stroke();
+         //ctx.fill();
+    }
     render() {
-            
+        
         const set = Object.entries(this.state.candles).map(
             ([key,candle])=>
             
             <Candle  key={key}id={candle.date} o={candle.open} c={candle.close} h={candle.high} l={candle.low} 
             d={candle.date} range={this.state.dataRange.range} rangeHigh={this.state.dataRange.rangeHigh} 
             rangeLow={this.state.dataRange.rangeLow }chartHeight={this.state.chartDimensions.chartHeight}
+            chartWidth= {this.state.chartDimensions.chartWidth}
             onMouseOver={this.mouseOver}
+            onResize = {this.resize}
+            
             ></Candle>
             
         );
@@ -192,11 +211,11 @@ class CandleChart extends React.Component {
             <label>Ticker: </label><input id="tickerInput" type="text" defaultValue="SPY" onKeyDown={this.keyHandler} />
             
             <select id="intervalSelector" name="Interval" onChange={this.selectHandler} required >
-                <option disabled  defaultValue=""> Select a Time Interval </option>
+                <option disabled  > Select a Time Interval </option>
                 <option value="one_min">1 Minute</option>
                 <option value="five_min">5 Minutes</option>
                 <option value="fifteen_min">15 Minutes</option>
-                <option value="sixty_min">1 Hour</option>
+                <option value="sixty_min" selected>1 Hour</option>
                 <option value="4h">4 Hour</option>
                 <option value="daily">Daily</option>
                 <option value="weekly">Weekly</option>
@@ -212,10 +231,12 @@ class CandleChart extends React.Component {
             </ul>
         
         </div>
-         <div id="candleChart">
-           {set}    
-
+        
+         <div id="candleChart" >
+            
+            {set}  
         </div>
+        
               
         </>   
             

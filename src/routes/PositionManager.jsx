@@ -1,7 +1,8 @@
+import CandleChart from '../Components/CandleChart'
 const PositionManager = () => {
     return <>
-     <div className="page"><h1>Position Manager</h1>;</div>
-      
+     <div className="page"> <CandleChart /></div>
+       
       </>
   };
   

@@ -1,11 +1,11 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./routes/Layout";
-import Home from "./routes/Home";
-import StrategyLab from "./routes/StrategyLab";
-import PositionManager from "./routes/PositionManager";
-import RiskManager from "./routes/RiskManager";
-import './styles/header.css'
+import Layout from "../Routes/Layout";
+import Home from "../Routes/Home";
+import StrategyLab from "../Routes/StrategyLab";
+import PositionManager from "../Routes/PositionManager";
+import RiskManager from "../Routes/RiskManager";
+import '../styles/header.css'
 
 
  function Header(){

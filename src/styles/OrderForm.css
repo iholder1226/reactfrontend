@@ -1,0 +1,30 @@
+#componentWrapper{
+  display:grid;
+  position: absolute;
+  height:40vh;
+  width:500px;
+  z-index:1;
+  margin-left:-250px;
+  top:50%;
+  left:50%;
+
+  
+  padding:15px;
+  background-color:black;
+  padding-bottom:5px; 
+  border: solid 1px white;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    }
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+    }

@@ -4,8 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import './index.css'
 import ApexCharts from 'apexcharts'
-import Header from './Header';
-import CandleChart from './CandleChart'
+import Header from './Components/Header';
+import CandleChart from './Components/CandleChart'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +16,7 @@ function App() {
       <Header />
     
       <div className="footer"> 
+     
       </div>
       
       

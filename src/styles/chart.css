@@ -1,26 +1,41 @@
 #candleChart{
     background-color:black;
     display:grid; 
+    position: relative;
    /*  direction: rtl;*/
    
    
-  
-    grid-auto-flow: column;
+ 
+  grid-auto-flow: column;
+    
   /* padding-bottom:10px;
     padding-top:10px;
     overflow-x:scroll;
     overflow:auto;*/
-    width:100vw;
-    height:80vh;
+    width:100%;
+    height:100%;
+    z-index: 0;
 }
 .chartController{
   position:relative;
   color:white;
   height:5vh;
   width:100vw;
-  float:right;
+  
   background-color:black;
 
+}
+.footerTab{
+  position: relative;
+  height: 5vh;
+  width:100%;
+}
+.indicator{
+  position:fixed;
+  z-index: 1;
+  width:100vw;
+  height:100%;
+  background-color: rgba(248, 249, 250, 0);
 }
 ul{
   padding:0;

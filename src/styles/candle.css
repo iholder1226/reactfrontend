@@ -1,9 +1,12 @@
-canvas{
+.Candle{
+    position: relative;
     background-color:black;
     border:1;
-    width:10px;
+    width:5px;
+    height:100%;
+    z-index: 0;
 }
-canvas:hover{
+.Candle:hover{
     background:lightblue;
 }
 

@@ -1,0 +1,24 @@
+
+.strategyBuilder{
+    height:100%;
+    width:95vw;
+    background-color:rgb(222, 223, 248);
+    display:grid;
+}
+.conditionSets{
+    display:grid; 
+    position: relative;
+    border-radius: 2px;
+    background-color:wheat;
+    font-size:12px;
+   /*  direction: rtl;*/
+   
+    /*overflow: auto;*/
+    align-items:center;
+    justify-content: center;
+  grid-auto-flow: column;
+  column-gap: 1vw;
+    width:100vw;
+    height:150px;
+    float:left;
+}

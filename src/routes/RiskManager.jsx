@@ -1,6 +1,6 @@
 const RiskManager = () => {
     return <>
-     <div className="page"><h1>RISK</h1></div>
+     <div className="page"></div>
     </>
   };
   
