@@ -1,0 +1,9 @@
+canvas{
+    background-color:black;
+    border:1;
+    width:10px;
+}
+canvas:hover{
+    background:lightblue;
+}
+
