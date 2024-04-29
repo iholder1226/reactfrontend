@@ -53,7 +53,7 @@ class CandleChart extends React.Component {
         this.setState({
             candles:new Array()
         })
-        const apiKey = 'XX60MG2JNYQVMHA0'//'WVA5ZM7YMCV47S5P'
+        
         const responseAvailable = false;
         let candleSet =[];
         let alphaResponse = []
