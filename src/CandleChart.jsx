@@ -223,26 +223,6 @@ class CandleChart extends React.Component {
     }
 }
 export default CandleChart
-      /*<Candle id={1}o={2}h={9}l={1}c={5}d={"12312"}range={8}rangeHigh={5}rangeLow={1}></Candle>
-      <Candle id={14}o={5}h={10}l={1}c={4}d={"12"}range={9}rangeHigh={5}rangeLow={1}></Candle>
-                <Candle id={15}o={5}h={9}l={1}c={7}d={"12312"}range={8}rangeHigh={5}rangeLow={1}></Candle>  
-                <Candle id={16}o={3}h={8}l={1}c={7}d={"7"}range={9}rangeHigh={5}rangeLow={1}></Candle>  
-                <Candle id={17}o={7}h={10}l={1}c={7}d={"12"}range={9}rangeHigh={5}rangeLow={1}></Candle>
-                <Candle id={18}o={6}h={9}l={1}c={7}d={"12312"}range={8}rangeHigh={5}rangeLow={1}></Candle>  
-                <Candle id={19}o={2}h={10}l={1}c={7}d={"12"}range={9}rangeHigh={5}rangeLow={1}></Candle>  
-                <Candle id={20}o={5}h={10}l={1}c={7}d={"12"}range={9}rangeHigh={5}rangeLow={1}></Candle>  
-                <Candle id={21}o={2}h={9}l={1}c={5}d={"12312"}range={8}rangeHigh={5}rangeLow={1}></Candle>
-                <Candle id={22}o={5}h={9}l={1}c={7}d={"12312"}range={8}rangeHigh={5}rangeLow={1}></Candle>  
-                <Candle id={23}o={5}h={12}l={1}c={7}d={"12"}range={9}rangeHigh={11}rangeLow={1}></Candle>  
-                <Candle id={24}o={5}h={10}l={1}c={4}d={"12"}range={9}rangeHigh={5}rangeLow={1}></Candle>
-                <Candle id={25}o={5}h={9}l={1}c={7}d={"12312"}range={8}rangeHigh={5}rangeLow={1}></Candle>  
-                <Candle id={26}o={3}h={8}l={1}c={7}d={"7"}range={9}rangeHigh={5}rangeLow={1}></Candle>  
-                <Candle id={27}o={7}h={10}l={1}c={7}d={"12"}range={9}rangeHigh={5}rangeLow={1}></Candle>
-                <Candle id={82}o={6}h={9}l={1}c={7}d={"12312"}range={8}rangeHigh={5}rangeLow={1}></Candle>  
-                <Candle id={29}o={2}h={10}l={1}c={7}d={"12"}range={9}rangeHigh={5}rangeLow={1}></Candle>   */
-//<Candle id={1}o={2}h={9}l={1}c={5}d={"12312"}range={8}rangeHigh={5}rangeLow={1}></Candle>
-//<Candle id={2}o={5}h={9}l={1}c={7}d={"12312"}range={8}rangeHigh={5}rangeLow={1}></Candle>
-      //const domContainer = document.querySelector('#chart');
-     // ReactDOM.render(React.createElement(ApexChart), domContainer);
+     
     
    
